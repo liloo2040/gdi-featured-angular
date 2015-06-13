@@ -69,11 +69,12 @@
                 <h3>What is a MV* framework?</h3>
                 <br>
                 <ul> 
-                    <li class="fragment">A variation of an MVC (Model View Controller)
+                    <li class="fragment">A variation of an MVC (Model View Controller)</li>
                             <li class="fragment">Model &mdash; a type of data to model, like a user, account, photo, or note</li>
                             <li class="fragment">View &mdash; the markup & templates for the UI</li>
                             <li class="fragment">Controller &mdash; handles input & updates state of model</li>
-                        </li>
+                        <li class="fragment">MVC, MVVM, MVVMCS, MVG, ...</li>
+
                 </ul>
             </section>
             <section>
@@ -89,6 +90,7 @@
                 
                     <li class="fragment">Can be client- or server-side, and not specific to JavaScript</li>
                     <li class="fragment"><a href="http://www.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/">Journey Through the JavaScript MVC Jungle</a></li>
+                    <li class="fragment"><a href="http://todomvc.com/">todomvc.com</a></li>
                 </ul>
             </section>
             <section>
@@ -101,14 +103,33 @@
                 </ul>
             </section>
 
-<!--             <section>
-                <h3>JavaScript is a client-side language</h3>
+            <section>
+                <h3>Why Use Angular?</h3>
                 <br>
+                <ul>
+                    <li class="fragment">Code organization</li>
+                    <li class="fragment">Speedy websites</li>
+                    <li class="fragment">Easy to test</li>
+                    <li class="fragment">Many, many resources</li>
+                </ul>
+            </section>
+
+
+
+            <section>
+                <h3>An example Angular App</h3>
                 <br>
-                <img src="images/client-server.jpg" alt="Laptop and server connected via the internet"/>
-				<p class="credit">Photo credits: <a href="http://www.flickr.com/photos/papalars/5210226441/" target="_blank">Andrew E. Larson</a> and <a href="http://www.flickr.com/photos/johnseb/3425464/" target="_blank">John Seb Barber</a> <a href="http://creativecommons.org/licenses/by-nc/2.0/" target="_blank">cc</a></p>
-            </section> -->
-<section>
+                <p>A basic todo list app: <a href="http://www.ahoef.co/todo-list/">ahoef.co/todo-list</a></p>
+                <br>
+                <p>The app's markup: <a href="https://github.com/ahoef/angular-todo-list-app/blob/master/index.html">github.com/ahoef/angular-todo-list-app/blob/master/index.html</a></p>
+                <br>
+                <ul>
+                    <li class="fragment">You'll notice {{ }} and attributes beginning with ng-</li>
+                    <li class="fragment">Those are the key components of an Angular View!</li>
+                </ul>
+            </section>
+
+            <section>
           <h3>Including Angular</h3>
           <br>
           <ul>
@@ -125,55 +146,44 @@
             </li>
           </ul>
         </section>
+            <section>
+                <h3>ng-app</h3>
+                <br>
+                <p>The Angular library looks for this attribute in your markup to know it should render Angular code </p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;label>Name:&lt;/label&gt;
+    &lt;input type="text" ng-model="yourName"&gt;
+    &lt;hr&gt;
+    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+&lt;/body &gt;
+				</code></pre>
+                <br>
+                <small>(We'll cover what this code does shortly!)</small>
+            </section>
 
             <section>
-                <h3>console.log</h3>
+                <h3>Expressions</h3>
                 <br>
-                <p>A common way to view JavaScript output in the browser's console</p>
+                <p>A way to insert data into html via a JavaScript string, number, object, or array </p>
                 <br>
                 <pre><code>
-&lt;script&gt;
-    console.log('Hello World!');
-    console.log('JavaScript is great!');
-    console.log('Welcome to the console!');
-&lt;/script&gt;
-				</code></pre>
+&lt;body ng-app&gt;
+    &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
+    &lt;p&gt;Our President is {{ "Barack " + "Obama" }} apples&lt;/p&gt;
+&lt;/body &gt;
+                </code></pre>
             </section>
-            <section>
-                <h3>Comments</h3>
-                <br>
-                <p>You can leave comments in your code&mdash;notes that people can read and computers will ignore.</p>
-                <br>
-                <pre><code>
-&lt;script&gt;
-    /*I can wrap long comments 
-    with multiple lines 
-    like this*/
-    console.log('Hello World!'); //Or mark short comments like this
-&lt;/script&gt;
-				</code></pre>
-            </section>
-<!--             <section>
-                <h3>Getting results onto your screen</h3>
-                <p>Open a popup box.</p>
-                <pre><code>
-alert('Hello World!');
-				</code></pre>
-                <p>Display a message in your console.</p>
-                <pre><code>
-console.log('Hello World!');
-				</code></pre>
-                <p>Add something to the page.</p>
-                <pre><code>
-document.write('Hello World!');
-				</code></pre>
-            </section> -->
+
             <section>
                 <h3>Exercise</h3>
                 <br>
                 <ul>
-                    <li>Add a console.log within the script tags in index.html</li>
-                    <li>Add a console.log in site.js</li>
+                    <li>Open exercises/hello-world/hello-world.html in your text editor</li>
+                    <li>Import the Angular library</li>
+                    <li>Assign your root element with ng-app</li>
+                    <li>Include html with a few string & number expressions </li>
                 </ul>
             </section>
        
@@ -1424,7 +1434,9 @@ $('button').on('click', function() {
         </section>
 
 
-
+<section>
+    <a href="http://www.ng-newsletter.com/">ng-newsletter</a>
+</section>
 
         <section>
           <h2>Questions?</h2>
