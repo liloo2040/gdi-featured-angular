@@ -147,20 +147,18 @@
           </ul>
         </section>
             <section>
-                <h3>ng-app</h3>
+                <h3>Built-In Directives</h3>
                 <br>
-                <p>The Angular library looks for this attribute in your markup to know it should render Angular code </p>
+                <p>The Angular library looks for these attribute in your markup to know it should render Angular code</p>
                 <br>
                 <pre><code>
 &lt;body ng-app&gt;
-    &lt;label>Name:&lt;/label&gt;
-    &lt;input type="text" ng-model="yourName"&gt;
-    &lt;hr&gt;
-    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
-&lt;/body &gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
 				</code></pre>
                 <br>
-                <small>(We'll cover what this code does shortly!)</small>
+                <p><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is required directive used to identify the root element and determine scope</p>
+                <!-- <small>(We'll cover what this code does shortly!)</small> -->
             </section>
 
             <section>
@@ -171,13 +169,54 @@
                 <pre><code>
 &lt;body ng-app&gt;
     &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
-    &lt;p&gt;Our President is {{ "Barack " + "Obama" }} apples&lt;/p&gt;
-&lt;/body &gt;
+    &lt;p&gt;Our President is {{ "Barack " + "Obama" }}&lt;/p&gt;
+&lt;/body&gt;
                 </code></pre>
             </section>
 
             <section>
                 <h3>Exercise</h3>
+                <br>
+                <ul>
+                    <li>Open exercises/hello-world/hello-world.html in your text editor</li>
+                    <li>Import the Angular library</li>
+                    <li>Assign your root element with ng-app</li>
+                    <li>Include html with a few string & number expressions </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Two-Way Data Binding</h3>
+                <br>
+                <p>The <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a> directive binds the value of an <code>input</code>, <code>select</code>, or <code>textarea</code> to an object that can be used in an expression</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;label>Name:&lt;/label&gt;
+    &lt;input type="text" ng-model="yourName"&gt;
+    &lt;hr&gt;
+    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+&lt;/body &gt;
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Two-Way Data Binding</h3>
+                <br>
+                <p>Expressions can be inserted as the value html attributes as well as text within html tags </p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;label>Name:&lt;/label&gt;
+    &lt;input type="text" ng-model="yourName"&gt;
+    &lt;hr&gt;
+    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+&lt;/body &gt;
+                </code></pre>
+            </section>
+
+            <section>
+                <h3>Two-Way Data Binding</h3>
                 <br>
                 <ul>
                     <li>Open exercises/hello-world/hello-world.html in your text editor</li>

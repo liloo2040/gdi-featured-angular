@@ -119,7 +119,7 @@ section#reading p span.blue {width: 43%;}
 .reveal a:not(.image):hover {
     color: #D45D5D;
     /*opacity: .7;*/
-    border-bottom: 1px solid;
+    border-bottom: 2px solid;
 }
 
 .reveal ul li {
