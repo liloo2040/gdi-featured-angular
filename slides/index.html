@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Intro to JavaScript</title>
+		<title>Intro to AngularJS</title>
 
 		<link rel="stylesheet" href="reveal/css/reveal.css">
         <link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
@@ -51,6 +51,63 @@
                 <a href="http://ahoef.co/gdi-angular/slides" style="color: white;">ahoef.co/gdi-angular/slides</a><br><br>
                 <a href="http://ahoef.co/gdi-angular/demo-files.zip" style="color: white;">ahoef.co/gdi-angular/demo-files.zip</a>
             </section>
+
+                   <section>
+          <h3>Welcome!</h3>
+          <div class="left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p >Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Welcome!</h2>
+      
+<!--             <li class="fragment">This class will be a combo of lecture + exercises</li>
+            <li class="fragment">It is 4 hours long, split over 2 days</li> -->
+            <br>
+            <p>Agenda &mdash; Day 1<p>
+            <br>
+
+                <ul>
+                  <li>Introductions</li>
+                  <li>Overview of MVC patterns</li>
+                  <li>Overview of a basic Angular app</li>
+                  <li>Built-in Directives and Expressions</li>
+                </ul>
+        </section>
+
+        <section>
+          <h3>Welcome!</h2>
+            <br>
+            <p>Agenda &mdash; Day 2<p>
+            <br>
+                <ul>
+                  <li>Controllers & $scope</li>
+                  <li>Custom directives</li>
+                  <li>Dependency Injection</li>
+                  <li>Services</li>
+                  <li>Angular 2.0</li>
+                </ul>
+        </section>
+
+        <section>
+          <h3>Welcome!</h3>
+          <div class="left-align">
+          <p >Tell us about yourself.</p>
+          <ul>
+            <li>Who are you?</li>
+            <li>What do you hope to get out of the class?</li>
+            <li>Which of your web projects are you most proud of?</li>
+          </ul>
+          </div>
+        </section>
         
             <section>
                 <h3>What is AngularJS?</h3>
@@ -157,7 +214,7 @@
 &lt;/body&gt;
 				</code></pre>
                 <br>
-                <p><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is required directive used to identify the root element and determine scope</p>
+                <p><a href="https://docs.angularjs.org/api/ng/directive/ngApp">ng-app</a> is a required directive used to identify the root element and determine scope</p>
                 <!-- <small>(We'll cover what this code does shortly!)</small> -->
             </section>
 
@@ -208,40 +265,140 @@
                 <pre><code>
 &lt;body ng-app&gt;
     &lt;label>Name:&lt;/label&gt;
-    &lt;input type="text" ng-model="yourName"&gt;
+    &lt;input type="text" ng-model="user.status"&gt;
     &lt;hr&gt;
-    &lt;h1&gt;Hello {{yourName}}!&lt;/h1&gt;
+    &lt;h1 class="status-text-{{user.status}}"&gt;Your status is: 
+    {{user.status}}!&lt;/h1&gt;
 &lt;/body &gt;
                 </code></pre>
             </section>
 
             <section>
-                <h3>Two-Way Data Binding</h3>
+                <h3>Exercise</h3>
                 <br>
                 <ul>
-                    <li>Open exercises/hello-world/hello-world.html in your text editor</li>
-                    <li>Import the Angular library</li>
-                    <li>Assign your root element with ng-app</li>
-                    <li>Include html with a few string & number expressions </li>
+                    <li>In hello-world.html, within your ng-app, add the markup for a form input field</li>
+                    <li>Also add the markup for a heading
+                    <li>Bind the value of the input to text within your heading tags by using ng-model </li>
+                    <li>Try to add a few more data-bindings with ng-model!</li>
                 </ul>
+            </section>
+            <section>
+                <h3>More Built-In Directives: <br> ng-repeat</h3>
+                <br>
+                <p>ng-repeat is Angular's way of looping</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;ul&gt;
+        &lt;li ng-repeat="item in ['Sal', 'Jo', 'Amir', 'Maria']"&gt;
+            {{item}} is my friend.
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body &gt;
+                </code></pre>
             </section>
        
             <section>
-				<h3>Variables</h3>
-                <p>A variable is a place to store values</p>
+				<h3>More Built-In Directives: <br> ng-if</h3>
                 <br>
-                <img src="images/cardcatalog.jpg" style="-webkit-filter: grayscale(100%); filter: grayscale(100%);">			
+                <p>ng-if is Angular's <code>if</code> statement</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;p ng-if="'Sal' === 'Sal'"&gt;True!&lt;/p&gt;
+    &lt;p ng-if="'Sal' === 'Jo'"&gt;False!&lt;/p&gt;
+&lt;/body &gt;
+                </code></pre>			
 			</section>
             <section>
-				<h3>Variable Values</h3>
+				<h3>More Built-In Directives: <br> ng-show/ng-hide</h3>
+                <br>
+                <p><code>ng-show</code> & <code>ng-hide</code> toggle an element's display based on value</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;p ng-show="5 > 2"&gt;Five is greater than two.&lt;/p&gt;
+    &lt;p ng-show="2 > 5"&gt;Two is greater than five.&lt;/p&gt;
+&lt;/body &gt;
+                </code></pre>
+                <br>
+                <small>Note: if the value of <code>ng-show</code> evaluates to false, the element will still live in the DOM</small>
+			</section>
+
+        <section>
+                <h3>Exercise</h3>
                 <br>
                 <ul>
-                    <li>When you first create a variable, it does not have a value (it is null).</li>
-                    <li>You can set a value for a variable.</li>
-                    <li>Variables can hold different types of information, like words, numbers, and collections of data.</li>
-                    <li>The value of a variable can change over time.</li>
+                    <li>In hello-world.html, within your ng-app, use ng-repeat to loop through an array of your favorite TV shows, and display each one on the page</li>
+                    <li>Use ng-show/ng-hide or ng-if to conditionally display an image of your favorite celebrity</li>
                 </ul>
-			</section>
+            </section>
+
+                    <section>
+                <h3>More Built-In Directives: <br> ng-init</h3>
+                <br>
+                <p><code>ng-class</code> conditionally adds a class based on value</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+
+    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
+        This is my first sentence.
+    &lt;/p&gt;
+
+    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
+        This is my second sentence.
+    &lt;/p&gt; 
+
+&lt;/body &gt;
+                </code></pre>
+                <br>
+            </section>
+
+                    <section>
+                <h3>More Built-In Directives: <br> ng-click</h3>
+                <br>
+                <p><code>ng-class</code> conditionally adds a class based on value</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+
+    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
+        This is my first sentence.
+    &lt;/p&gt;
+
+    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
+        This is my second sentence.
+    &lt;/p&gt; 
+
+&lt;/body &gt;
+                </code></pre>
+                <br>
+            </section>
+
+        <section>
+                <h3>More Built-In Directives: <br> ng-class</h3>
+                <br>
+                <p><code>ng-class</code> conditionally adds a class based on value</p>
+                <br>
+                <pre><code>
+&lt;body ng-app&gt;
+
+    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
+        This is my first sentence.
+    &lt;/p&gt;
+
+    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
+        This is my second sentence.
+    &lt;/p&gt; 
+
+&lt;/body &gt;
+                </code></pre>
+                <br>
+            </section>
+
+
             <section>
 				<h3>Naming Variables</h3>
                 <br>

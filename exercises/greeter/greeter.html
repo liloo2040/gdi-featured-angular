@@ -9,6 +9,9 @@
 		body {
 			padding: 100px;
 		}
+		.highlight {
+			background-color: yellow;
+		}
 		</style>
 	</head>
   <body>
@@ -16,5 +19,29 @@
     <input type="text" ng-model="yourName" placeholder="Enter a name here">
     <hr>
     <h1>Hello {{yourName}}!</h1>
-  </body>
+
+    <label>Age:</label>
+    <input type="text" ng-model="yourAge" placeholder="Enter a name here">
+    <hr>
+    <h1>Your Age {{yourAge}}!</h1>
+
+
+    <ul>
+        <li ng-repeat='item in ["Sal", "Jo", "Amir", "Maria"]'>
+            {{item}} is my friend.
+        </li>
+    </ul>
+
+    <p ng-show="5 > 2"><img src="http://datarecoverylabsurat.com/images/right-arrow_red.gif"></p>
+    <p ng-show="2 > 5">Two's greater than three</p>
+
+
+    <p ng-class="{'highlight': 5 > 2}" class="sentence">
+        This is my first sentence.
+    </p>
+
+    <p ng-class="{'highlight': 2 > 5}" class="sentence">
+        This is my second sentence.
+    </p> 
+
 </html>
