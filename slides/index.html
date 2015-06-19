@@ -337,20 +337,17 @@
 
                     <section>
                 <h3>More Built-In Directives: <br> ng-init</h3>
-                <br>
-                <p><code>ng-class</code> conditionally adds a class based on value</p>
-                <br>
+                <p><code>ng-init</code> sets an initial value</p>
                 <pre><code>
 &lt;body ng-app&gt;
-
-    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
-        This is my first sentence.
-    &lt;/p&gt;
-
-    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
-        This is my second sentence.
-    &lt;/p&gt; 
-
+    &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+        &lt;button&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;ul ng-show="isOpen"&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Blog&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
 &lt;/body &gt;
                 </code></pre>
                 <br>
@@ -358,46 +355,88 @@
 
                     <section>
                 <h3>More Built-In Directives: <br> ng-click</h3>
-                <br>
-                <p><code>ng-class</code> conditionally adds a class based on value</p>
-                <br>
+                <p>Angular's click listener</p>
                 <pre><code>
 &lt;body ng-app&gt;
-
-    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
-        This is my first sentence.
-    &lt;/p&gt;
-
-    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
-        This is my second sentence.
-    &lt;/p&gt; 
-
+    &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+        &lt;button ng-click="isOpen = !isOpen"&gt;
+            &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;ul ng-show="isOpen"&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Blog&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
 &lt;/body &gt;
                 </code></pre>
                 <br>
             </section>
+
+
+
+                    <section>
+                <h3>More Built-In Directives: <br> ng-class</h3>
+                <p><code>ng-class</code> conditionally adds a class based on value</p>
+                <pre><code>
+&lt;body ng-app&gt;
+    &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+
+        &lt;p ng-class="{'highlight': isOpen}"&gt;My Menu&lt;/p&gt;
+
+        &lt;button ng-click="isOpen = !isOpen"&gt;
+            &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;ul ng-show="isOpen"&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Blog&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/body &gt;
+                </code></pre>
+                <br>
+            </section>
+
 
         <section>
                 <h3>More Built-In Directives: <br> ng-class</h3>
-                <br>
-                <p><code>ng-class</code> conditionally adds a class based on value</p>
-                <br>
-                <pre><code>
-&lt;body ng-app&gt;
+                <p>Here's another example:</p>
+                <pre><code>&lt;body ng-app&gt;
+    &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
+        &lt;button ng-click="isOpen = !isOpen"&gt;
 
-    &lt;p ng-class="{'highlight': 5 > 2}" class="sentence"&gt;
-        This is my first sentence.
-    &lt;/p&gt;
+            &lt;i class="fa" ng-class="{
+                'fa-caret-square-o-down': !isOpen, 
+                'fa-caret-square-o-up': isOpen,}"&gt;
+            &lt;/i&gt;
 
-    &lt;p ng-class="{'highlight': 2 > 5}" class="sentence"&gt;
-        This is my second sentence.
-    &lt;/p&gt; 
-
-&lt;/body &gt;
-                </code></pre>
+        &lt;/button&gt;
+        &lt;ul ng-show="isOpen"&gt;
+            &lt;li&gt;Home&lt;/li&gt;
+            &lt;li&gt;About&lt;/li&gt;
+            &lt;li&gt;Blog&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/body &gt;</code></pre>
                 <br>
+            </section>  
+
+            <section>
+                <h3>Exercise</h3>
+                <br>
+                <ul>
+                    <li>In hello-world.html, within your ng-app, add a new <code>section</code> or <code>div</code> where you set a value to true or false with <code>ng-init</code></li>
+                    <li>Within that section/div, add a button with an <code>ng-click</code> directive that toggles the <code>ng-init</code> value</li>
+                    <li>Use <code>ng-show</code> or <code>ng-hide</code> to show/hide an image of your pet (or your favorite animal) on click of your button </li>
+                </ul>
             </section>
 
+            <section>
+                <h3>Note!</h3>
+                <br>
+                <p>It's good to know how ng-init works, but usually you'll use a controller for that purpose</p>
+            </section>
 
             <section>
 				<h3>Naming Variables</h3>
