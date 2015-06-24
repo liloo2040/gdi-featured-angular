@@ -129,3 +129,9 @@ section#reading p span.blue {width: 43%;}
 .reveal .slides section {
     letter-spacing: .02em;
 }
+
+.reveal .controller-exercise li{
+    font-size: 24px;
+    line-height: 1.5;
+
+}

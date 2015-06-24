@@ -436,270 +436,97 @@
                 <h3>Note!</h3>
                 <br>
                 <p>It's good to know how ng-init works, but usually you'll use a controller for that purpose</p>
+                <br>
+                <p class="fragment">Before we talk about controllers, let's talk about modules!</p>
             </section>
 
             <section>
-				<h3>Naming Variables</h3>
+                <h3>Modules</h3>
+                <ul>
+                    <li>Where we write pieces of the app and define dependencies</li>
+                    <li>Module names are bound to <code>ng-app</code> directives</li>
+                </ul>
+                <br>
+                <pre><code>
+(function(){
+    var app = angular.module('myApp', []);
+})();
+                </code></pre>
+                <br>
+                <pre><code>&lt;body ng-app="myApp"&gt;
+    &lt;p&gt;I have {{ 1 + 2 }} apples&lt;/p&gt;
+    &lt;p&gt;Our President is {{ "Barack " + "Obama" }}&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+            </section>
+
+            <section>
+				<h3>Controllers</h3>
                 <br>
                 <ul>
-                    <li>The variable name is case-sensitive.</li>
-                    <li>A new variable needs to have a unique name.</li>
-                    <li>Variable names need to start with a letter, $, or _.</li>
-                    <li>Variable names can only be made of letters, numbers, $, or _.</li>
+                    <li class="fragment">They're where most of the app's functionality comes from</li>
+                    <li class="fragment">They control the data that passes through</li>
+                    <li class="fragment">They're regular JavaScript Objects</li>
+                    <li class="fragment">There can be more than one controller in an app</li>
                 </ul>
 			</section>
+
             <section>
-				<h3>Declaring a Variable</h3>
-                <p>To declare (create) a variable, just type the word "var" and the variable name.</p>
+                <h3>Controllers</h3>
+                <small>in app.js</small>
                 <pre><code>
-var numberOfKittens;
-				</code></pre>
-                <br>
-                <p>It is a good idea to give your variable a starting value. This is called initializing the variable.</p>
-                <pre><code>
-var numberOfKittens = 5;
-				</code></pre> 
-			</section>
-            <section>
-				<h3>Using a Variable</h3>
-                <br>
-                <p>Once you have created a variable, you can use it in your code. Just type the name of the variable.</p>
-                <br>
-                <pre><code>
-var numberOfKittens = 5;
-console.log (numberOfKittens);
-			</code></pre>
-			</section>
-            
-<!--             <section>
-				<h3>Numbers</h3>
-                <p>Variable can be numbers, either integers or floats (decimals).</p>
-                <pre><code>
+(function(){
 
-    var numberOfKittens = 5;
-    var cutenessRating = 9.6;
+    angular
+        .module('myApp', [])
 
-				</code></pre>
-                <p>The browser will automatically convert integers to floats if needed</p>
-			</section> -->
-            
-            <section>
-				<h3>Numbers & Math</h3>
-                <br>
-                <pre><code>
-var numberOfKittens = 5;
-var numberOfPuppies = 4;
-var numberOfAnimals = numberOfKittens + numberOfPuppies;
-				</code></pre>
-			</section>
-            <section>
-				<h3>Arithmetic Operators</h3>
-                <table>                
-                    <thead>
-                      <tr>
-                       <th>Example</th>
-                       <th>Name</th>
-                       <th>Result</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                       <td>-a</td>
-                       <td>Negation</td>
-                       <td>Opposite of a.</td>
-                      </tr>
-                      <tr>
-                       <td>a + b</td>
-                       <td>Addition</td>
-                       <td>Sum of a and b.</td>
-                      </tr>
-                      <tr>
-                       <td>a - b</td>
-                       <td>Subtraction</td>
-                       <td>Difference of a and b.</td>
-                      </tr>
-                      <tr>
-                       <td>a * b</td>
-                       <td>Multiplication</td>
-                       <td>Product of a and b.</td>
-                      </tr>
-                      <tr>
-                       <td>a / b</td>
-                       <td>Division</td>
-                       <td>Quotient of a and b.</td>
-                      </tr>
-                      <tr>
-                       <td>a % b</td>
-                       <td>Modulus</td>
-                       <td>Remainder of a divided by b.</td>
-                      </tr>
-                    </tbody>                
-                </table>
-			</section>
-            <section>
-				<h3>Exercise</h3>
-                <br>
-                <p>Create two variables and try some math!</p> 
-			</section>
-      
-            <section>
-                <h3>Strings</h3>
-                <br>
-                <p>Variable can be strings, which are groups of characters in quotes.</p>
-                <br>
-                <pre><code>
-var cityName = 'Philadelphia';
-				</code></pre>              
-            </section>
+        .controller('MainController', function(){
+            this.cat = cat
+        });
 
-            <section>
-                <h3>String Operators</h3>
-                <br>
-                <p>You can put strings together with a +, the concatenation operator.</p>
-                <br>
-                <pre><code>
-var cityName = 'Philadelphia';
-var cityAndState = cityName + ' Pennsylvania';
-console.log(cityAndState); //Outputs 'Philadelphia Pennsylvania'
-				</code></pre>
-            </section>
-            <section>
-                <h3>String Operators</h3>
-                <p>You can also use += to add things to the end of a string.</p>
-                <pre><code>
+    var cat = {
+        name: 'Ms. Whiskers',
+        age: 9,
+        eyes: 'blue'
+    };
 
-    var kittensName = 'Admiral ';
-    kittensName += ' Snuggles';
-    console.log(kittensName); //Outputs 'Admiral Snuggles'
-&lt;/script&gt;
-				</code></pre>
-            </section>
-
-            <section>
-				<h3>Exercise</h3>
-                <br>
-                <p>Create two variables, a first name and a last name, and then put them together to make a full name</p> 
-			</section>
-
-            <section>
-                <h3>Functions</h3>
-                <p>Functions are separable, reusable pieces of code. </p>
-                <br>
-                    <img src="images/robots.jpg" style="-webkit-filter: grayscale(100%); filter: grayscale(100%);">
-    
-            </section>
-            <section>
-                <h3>Using Functions</h3>
-                <br>
-                <pre><code>
-
-// declare the function
-function greet(){
-  console.log("Hey there!");
-}
-
-
-// call the function
-greet();
-			</code></pre>               
-            </section>
-
-<!--             <section>
-                <h3>Using Functions</h3>
-                <br>
-                <pre><code>
-
-var name = "Ali";
-
-function greet() {
-  name = "Joey";
-  console.log("Hey there, " + name);
-}
-
-greet();
-
-                </code></pre>               
-            </section> -->
-
-            <section>
-                <h3>Arguments</h3>
-                <p>Functions can accept input values, called arguments.</p>
-                <br>
-                <pre><code>
-function callKitten (kittenName){
-    console.log('Come here, ' + kittenName + '!');
-}
-callKitten ('Fluffy'); //outputs 'Come here, Fluffy!'
-
-
-
-function addNumbers(a, b) {
-    console.log(a + b);
-}
-addNumbers(5,7); //outputs 12
-addNumbers(9,12); //outputs 21
-				</code></pre>             
-            </section>
-<!--             <section>
-                <h3>Arguments</h3>
-                <p>You can also pass variables into functions. These variables do not need to have the same name as the function arguments.</p>
-                <pre><code>
-&lt;script&gt;
-    function addOne(inputNumber){
-        var newNumber = inputNumber + 1;
-        console.log('&lt;p&gt;You now have ' + newNumber);
-    }
-    //Declare variables
-    var numberOfKittens = 5;
-    var numberOfPuppies = 4;
-    //Use them in functions
-    addOne(numberOfKittens);
-    addOne(numberOfPuppies);    
-&lt;/script&gt;
-				</code></pre>             
-            </section>
-            <section>
-				<h3>Exercise</h3>
-                <p>Turn the code you wrote to output someone's full name into a function, then use it.</p> 
-			</section> -->
-<!--             <section>
-                <h3>Returning Values</h3>
-                <p>You can have a function give you back a value, to use later.</p>
-                <pre><code>
-&lt;script&gt;
-    function square(num) {
-        return num * num;
-    }
-    console.log(square(4));   // outputs '16'.
-    var squareOfFive = square(5); // will make squareOfFive equal 25.
-&lt;/script&gt;
-				</code></pre>
-                <p>Return will immediately end a function.</p>
-            </section> -->
-<!--             <section>
-				<h3>Exercise</h3>
-                <p>Add a return statement to your name function. Use that function to set the value of a variable.</p> 
-			</section> -->
-
-            <section>
-                <h3>Variable Scope</h3>
-                <p>The scope of a variable is how long the computer will remember it.</p>
-
-                
-            </section>
-            <section>
-                <h3>Global Scope</h3>
-                <p>A variable declared outside a function has a <span class="yellow">global</span> scope and can be accessed anywhere, even in a function.</p>
-                  <pre><code>
-var name = "Ali";
-
-function greet() {
-  console.log("Hey there, " + name);
-}
-
-greet(); //Outputs "Hey there, Ali"
+})();
                 </code></pre>
             </section>
+
+                        <section>
+                <h3>Controllers</h3>
+                <br>
+                <small>in index.html</small>
+            <pre><code>
+&lt;body ng-app="myApp"&gt;
+
+    &lt;section ng-controller="Main Controller as mainCtrl"&gt;
+        &lt;p&gt;My cat's name is {{mainCtrl.cat.name}}&lt;/p&gt;
+        &lt;p&gt;She has {{mainCtrl.cat.eyes}} eyes and she's 
+        {{mainCtrl.cat.age}} years old.&lt;/p&gt;
+    &lt;/section&gt;
+
+&lt;/body&gt;
+
+</code></pre>
+<br>
+<small >The scope of the controller is only within the <code>section</code> element!</small>
+</section>
+
+            <section class="controller-exercise">
+                <h3>Exercise</h3>
+                <ul>
+                    <li>In recipe-app/app.js, within the closure, create a module called 'recipeApp', a controller called 'RecipeController', and a variable called 'recipe'</li>
+                    <li>Set the recipe var as an object with a few different properties, like 'ingredients', 'cooktime', and 'directions'</li>
+                    <li>Set the recipe object as a property of the controller, using the 'this' keyword</li>
+                    <li>In recipe-app/index.html, add an <code>ng-app</code> directive with the value of "recipeApp", and an <code>ng-controller</code> directive with the value of "RecipeController as recipeCtrl"</li>
+                    <li>Include a few expressions referencing properties of the recipe object</li>
+                </ul>
+            </section>
+            
+
+            
             <section>
                 <h3>Local Scope</h3> 
                 <p>A variable declared within a function has a <span class="yellow">local</span> scope and can only be accessed within that function.</p>
