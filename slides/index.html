@@ -518,7 +518,9 @@
                 <h3>Exercise &mdash; Part 1</h3>
                 <ul>
                     <li>In recipe-app/app.js, within the closure, create a module called 'recipeApp', a controller called 'RecipeController', and a variable called 'recipe'</li>
-                    <li>Set the recipe var as an object with a few different properties, like 'name', 'ingredients', 'prepTime', 'cookTime', and 'directions'. Try to set one or more of these properties (like 'ingredients') as an array</li>
+                    <li>Set the recipe var as an object with a few different properties, like 'name', 'ingredients', 'prepTime', 'cookTime', and 'directions'
+                    <ul><li> Try to set one of these properties (like 'ingredients') as an array</li>
+                    <li>Add two or three new properties as booleans, like 'isVegan', 'isGlutenFree', or 'isPaleo'</li></ul></li>
                     <li>Set the recipe object as a property of the controller, using the 'this' keyword</li>
                 </ul>
             </section>
@@ -528,7 +530,8 @@
                 <ul>
                     <li>In recipe-app/index.html, add an <code>ng-app</code> directive with the value of "recipeApp", and an <code>ng-controller</code> directive with the value of "RecipeController as recipeCtrl"</li>
                     <li>Include a few expressions referencing properties of the recipe object</li>
-                    <li>Use <code>ng-repeat</code> to iterate over one of your array properties in the recipe object
+                    <li>Use <code>ng-repeat</code> to iterate over one of your array properties in the recipe object</li>
+                    <li>Use <code>ng-if</code> or <code>ng-show</code> to conditionally display your boolean properties</li>
                 </ul>
             </section>
             
