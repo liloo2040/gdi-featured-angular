@@ -4,10 +4,11 @@
         .module('myApp', [])
 
         .controller('RecipeController', function(){
-            this.recipe = recipe
+            this.recipes = recipes
         });
 
-    var recipe = {
+    var recipes = [
+    {
         name: 'Waffles',
         cookTime: 9,
         prepTime: 10,
@@ -16,6 +17,17 @@
         isVegan: false,
         isPaleo: true,
         isGlutenFree: true
-    };
+    },
+    {
+        name: 'Waffles',
+        cookTime: 9,
+        prepTime: 10,
+        ingredients: ['flour', 'water', 'sugar', 'vanilla'],
+        directions: "Mix everything together in a bowl with a whisk. Use a waffle press to make your waffles!",
+        isVegan: false,
+        isPaleo: true,
+        isGlutenFree: true
+    }
+    ];
 
 })();
