@@ -593,8 +593,48 @@
                 </ul>
             </section>
 
+            <section>
+                <h3>Controllers</h3>
+                    <p>Functions can also be stored as properties</p>
+                <pre><code >
+//app.js                  
+angular
+    .module('todoApp', [])
+    .controller('TodoListController', function() {
+        var todoList = this;
+
+        todoList.todos = [
+          {text:'learn angular', done:true},
+          {text:'build an angular app', done:false}
+        ];
+
+        todoList.logArg = function(arg) {
+            console.log(arg);
+        }
+    };
+});
+                </code></pre>
+            </section>
+
+            <section>
+            <h3>Controllers</h3>
+                    <p>And they can be called by events!</p>
+                    <br>
+        <pre><code>
+&lt;!-- index.html --&gt;
+
+&lt;body ng-app="todoApp&gt;
+    &lt;section ng-controller="TodoListController as todoListCtrl&gt;
+        &lt;button ng-click="todoListCtrl.logArg('hi!')"&gt;
+            Log me!
+        &lt;/button&gt;
+    &lt;/section&gt;
+&lt;/body &gt;
+
+</code></pre>
+            </section>
+
 <!--             
--functions in controllers
 -todo list exercise
 -add sortable OR localstorage as example of dependency injection
 -->
@@ -614,9 +654,11 @@
   <section>
     <h3>Angular 2.0</h3>
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Sometime within the next year, Angular 2.0 will be released</li>
+        <li>It will be an entire rewrite largely based on ES6</li>
+        <li>The $scope object & jqLite will be removed</li>
+        <li>The implementation of directives and controllers will change</li>
+        <li><a href="https://www.airpair.com/angularjs/posts/preparing-for-the-future-of-angularjs">Preparing for the Future of AngularJS</a></li>
     </ul>
   </section>
 
