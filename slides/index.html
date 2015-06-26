@@ -633,11 +633,74 @@ angular
 
 </code></pre>
             </section>
+                        <section class="controller-exercise">
+                <h3>Exercise</h3>
+                <br>
+                <ul>
+                    <li>Let's look at the todo-list/app.js & todo-list/todo-list.html</li>
+                    <li>What are the functions in app.js doing?</li>
+                    <li>Which new directive in todo-list.html haven't we seen yet?</li>
+                </ul>
+            </section>
 
-<!--             
--todo list exercise
--add sortable OR localstorage as example of dependency injection
--->
+            <section>
+                <h3>Dependency Injection</h3>
+                <br>
+                <ul>
+                    <li class="fragment">Dependencies are standalone modules that can be pulled into your project for different uses</li>
+                    <li class="fragment">They can be included as external files in script tags, or if you're using grunt/gulp, usually they can be included as node modules</li>
+                    <li class="fragment"><a href="http://gregpike.net/demos/angular-local-storage/demo/demo.html">Angular Local Storage</a> is a popular module that uses the browser's local storage to persist your data without saving it to a database</li> 
+                </ul>
+            </section>
+            <section>
+                <h3>Dependency Injection</h3>
+ <!--                <br>
+<pre><code>&lt;script src="js/angular.localstorage.js"&gt;&lt;script&gt;</code></pre>
+                <br> -->
+                <pre><code style="max-height: 460px">                 
+angular.module('todoApp', ['LocalStorageModule'])
+    .controller('TodoListController', function(localStorageService) {
+        var todoList = this;
+
+        // todoList.todos = [
+        //   {text:'learn angular', done:true},
+        //   {text:'build an angular app', done:false}];
+
+        var todosInStore = localStorageService.get('myTodos');
+        todoList.todos = todosInStore || [];
+
+        todoList.addTodo = function() {
+          todoList.todos.push({text:todoList.todoText, done:false});
+          localStorageService.set('myTodos', todoList.todos);
+          todoList.todoText = '';
+        };
+
+        [...]
+
+    });
+                </code></pre>
+            </section>
+
+            <section class="controller-exercise">
+                <h3>Exercise</h3>
+                <ul>
+                    <li>Include a script tag in todo-list/todo-list.html to reference localstorage.js</li>
+                    <li>In todo-list/app.js, include <code>'LocalStorageModule'</code> as a dependency and <code>localStorageService</code> as an argument in your controller callback function </li>
+                    <li>Set a var called <code>todosInStore</code> with the value of <code>localStorageService.get('myTodos')</code></li>
+                </ul>
+            </section>
+
+            <section class="controller-exercise">
+                <h3>Exercise... continued</h3>
+                <ul>
+                    <li>Comment out the array of <code>todoList.todos</code>, and set <code>todoList.todos</code> to: <code>todosInStore || []</code></li>
+                    <li>Within your <code>addTodo</code> function, before the line that sets an empty string, add a function to set local storage with the array of todos as its updated (<code>localStorageService.set('myTodos', todoList.todos);</code>)</li>
+                </ul>
+            </section>
+
+<!--             slide on $scope.$watch
+            exercise to add for saving checked items -->
+
             
   <section>
     <h3>From here onward...</h3>
