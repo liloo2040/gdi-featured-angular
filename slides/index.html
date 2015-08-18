@@ -112,7 +112,6 @@
             <ul> 
                 <li class="fragment">A client-side JavaScript framework for extending HTML in small &#8594; large apps</li>
                 <li class="fragment">Initially released in 2009 by Google</li>
-                <!-- born out of a bet between developers at google- rewrite a 17000 line piece of software in two weeks. did it in three, and became angular -->
                 <li class="fragment">Used in production by Google, Virgin America, HBO, msnbc, Nike, Urban Outfitters, & more</li>
                 <li class="fragment">Known for data-binding, directives, dependency injection, & more</li>
                 <li class="fragment">Falls within the family of MV* frameworks, and is often compared to Ember.js, Backbone.js, & React</li>
@@ -340,7 +339,11 @@
             <section>
                 <h3>More Built-In Directives: <br> ng-init</h3>
                 <p><code>ng-init</code> sets an initial value</p>
-                <pre><code>
+                <pre><code>&lt;head&gt;
+    &lt;!-- add icon font library --&gt;
+    &lt;link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
+&lt;/head&gt;
+
 &lt;body ng-app&gt;
     &lt;nav ng-init="isOpen = false" class="mobile-nav"&gt;
         &lt;button&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/button&gt;
@@ -502,7 +505,7 @@
             <pre><code>
 &lt;body ng-app="myApp"&gt;
 
-    &lt;section ng-controller="Main Controller as mainCtrl"&gt;
+    &lt;section ng-controller="MainController as mainCtrl"&gt;
         &lt;p&gt;My cat's name is {{mainCtrl.cat.name}}&lt;/p&gt;
         &lt;p&gt;She has {{mainCtrl.cat.eyes}} eyes and she's 
         {{mainCtrl.cat.age}} years old.&lt;/p&gt;
@@ -575,7 +578,7 @@
                 <pre><code >
 &lt;body ng-app="myApp"&gt;
 
-    &lt;section ng-controller="Main Controller as mainCtrl"&gt;
+    &lt;section ng-controller="MainController as mainCtrl"&gt;
         &lt;article ng-repeat="cat in mainCtrl.cats"&gt;
             &lt;p&gt;My cat's name is {{cat.name}}&lt;/p&gt;
             &lt;p&gt;She has {{cat.eyes}} eyes and she's 
