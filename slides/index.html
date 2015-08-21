@@ -44,11 +44,12 @@
 
             <section>
                 <br>
+                <p>Wifi: PromptWorks-Guest</p>
+                <p>Password: handcrafted</p>
                 <br>
                 <br>
-                <br>
-                <a href="http://ahoef.co/gdi-angular/slides" style="color: white;">ahoef.co/gdi-angular/slides</a><br><br>
-                <a href="http://ahoef.co/gdi-angular/demo-files.zip" style="color: white;">ahoef.co/gdi-angular/demo-files.zip</a>
+                <a href="http://ahoef.co/gdi-angular/slides">ahoef.co/gdi-angular/slides</a><br><br>
+                <a href="http://ahoef.co/gdi-angular/demo-files.zip">ahoef.co/gdi-angular/demo-files.zip</a>
             </section>
 
             <section>
@@ -453,7 +454,7 @@
                 <br>
                 <pre><code>
 (function(){
-    var app = angular.module('myApp', []);
+    angular.module('myApp', []);
 })();
                 </code></pre>
                 <br>
@@ -485,7 +486,7 @@
         .module('myApp', [])
 
         .controller('MainController', function(){
-            this.cat = cat
+            this.cat = cat;
         });
 
     var cat = {
@@ -548,7 +549,7 @@
         .module('myApp', [])
 
         .controller('MainController', function(){
-            this.cats = cats
+            this.cats = cats;
         });
 
     var cats = [
@@ -615,7 +616,7 @@ angular
 
         todoList.logArg = function(arg) {
             console.log(arg);
-        }
+        };
     };
 });
                 </code></pre>
@@ -628,8 +629,8 @@ angular
         <pre><code>
 &lt;!-- index.html --&gt;
 
-&lt;body ng-app="todoApp&gt;
-    &lt;section ng-controller="TodoListController as todoListCtrl&gt;
+&lt;body ng-app="todoApp"&gt;
+    &lt;section ng-controller="TodoListController as todoListCtrl"&gt;
         &lt;button ng-click="todoListCtrl.logArg('hi!')"&gt;
             Log me!
         &lt;/button&gt;
