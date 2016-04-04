@@ -1,25 +1,21 @@
-> Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Then, delete this banner and add the specifics about your class below.
+# Intro to AngularJS
 
-# Add Your Course Title Here
-
-Slides and materials are hosted at [http://example.com/](http://example.com/).
+Slides and materials are hosted at [http://girldevelopit.github.io/gdi-angular/](http://girldevelopit.github.io/gdi-angular/).
 
 ## Course description
 
-Use this space for a short description of your course. We recommend using the description from your meetup event.
+In the last few years, AngularJS has become one of the most popular front-end JavaScript frameworks for building fast and maintainable web apps. It's now widely used in production, ranging from small single-page apps to high-volume features on Google, Virgin America, HBO, MSNBC, Nike, Urban Outfitters, & more. In this workshop split over two evenings, learn the basics of how to get started with developing Angular apps and scaling them with further complexity. We'll use lots of demos to show practical applications of the framework's features, and students will leave the class with a portfolio of introductory Angular projects.
 
-**Cost:** 
+**Cost:**
 
-**Dates:** 
+**Dates:**
 
-**Location:** 
+**Location:**
 
 A limited number of scholarships are available for those with a financial hardship. To apply, contact us at...
 
 
 ### Prerequisites:
-
-List any prerequisites for this class, including any previous classes or the equivalent self-study or real-world skills.
 
 You should have:
 
@@ -29,21 +25,27 @@ You should have:
 
 **And also:**
 
-(a) taken intro to JavaScript through Girl Develop It, or
+(a) taken Intro to JavaScript through Girl Develop It, or
 
-(b) be familiar with syntax, arrays, conditionals, for and while loops, event handling, jQuery, AJAX requests, and handling JSON responses.
+(b) be familiar with syntax, arrays, conditionals, for and while loops, event handling, AJAX requests, and handling JSON responses.
 
 
 ### Tech requirements:
 
  - Your laptop (Mac, PC, or Linux are all okay).
- - A modern web browser - either Chrome or Firefox with Firebug installed.
- - A text editor. We recommend Sublime Text 2 (free; available for Mac, PC, and Linux).
+ - A modern web browser - either Chrome or Firefox.
+ - A text editor. We recommend Sublime Text 3 (free; available for Mac, PC, and Linux).
 
 
 ### Topics covered:
 
- - The topics you plan to cover
- - Written in list form
- - Here's another one
+ - What is AngularJS, and why use it?
+ - Overview of MVC (Model View Controller) Patterns, and how Angular fits in
+ - Expressions & Data Binding
+ - Built-in Directives
+ - Controllers & $scope
+ - Dependency Injection
+ - Angular 2.0
 
+## Credit
+Alexandra Hoefinger (@ahoef) developed and taught this workshop for GDI Philly
