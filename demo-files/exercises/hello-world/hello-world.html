@@ -15,6 +15,22 @@
     <hr>
     <h2>Your framework is : {{ yourFramework }}</h2>
 
+    <label>Your programming language : </label>
+    <input type="text" ng-model="yourLanguage"/>
+    <hr>
+    <h2>Your programming language is : {{ yourLanguage }}</h2>
+
+    <label>Your IDE : </label>
+    <input type="text" ng-model="iDE"/>
+    <hr>
+    <h2>Your IDE is : {{ iDE }}</h2>
+
+    <ul>
+      <li ng-repeat="item in ['Marvel's Agents of SHIELD', 'DC Legends of Tomorrow', 'Farscape', 'Person Of Interest']">
+        I like {{item}}.
+      </li>
+    </ul>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
