@@ -35,6 +35,11 @@
     <p ng-if=" 'Gina Rodriguez' ===  'Gina Rodriguez'"><img src="https://media.glamour.com/photos/58e2c993692d2a0c11485081/master/pass/gina%20rodriguez%20social.jpg" width="300" height="160"></p>
     <p ng-if=" 'Gina Rodriguez' === 'Eva Longoria' ">Almost there!</p>
 
+    <div ng-init="myFavPet = true">
+      <button ng-click="myFavPet = !myFavPet">OK</button>
+      <img ng-src="https://www.petsonic.com/blog/wp-content/uploads/2017/02/yorkshire-cachorros-1024x680.jpg" width="400" height="300" ng-show="myFavPet">
+    </div>
+
 
   
 
