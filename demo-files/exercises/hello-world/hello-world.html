@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 	<head>
-
-	</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+  
   <body ng-app>
     <h1>Angular Hello World</h1>
 
@@ -26,13 +27,16 @@
     <h2>Your IDE is : {{ iDE }}</h2>
 
     <ul>
-      <li ng-repeat="item in ['Marvel's Agents of SHIELD', 'DC Legends of Tomorrow', 'Farscape', 'Person Of Interest']">
-        I like {{item}}.
+      <li ng-repeat="item in ['Marvel Agents of SHIELD','DC Legends of Tomorrow','Farscape','Person Of Interest']">
+        {{item}} is awesome.
       </li>
     </ul>
 
+    <p ng-if=" 'Gina Rodriguez' ===  'Gina Rodriguez'"><img src="https://media.glamour.com/photos/58e2c993692d2a0c11485081/master/pass/gina%20rodriguez%20social.jpg" width="300" height="160"></p>
+    <p ng-if=" 'Gina Rodriguez' === 'Eva Longoria' ">Almost there!</p>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+  
 
   </body>
 </html>
