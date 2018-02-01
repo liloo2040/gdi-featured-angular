@@ -7,7 +7,18 @@
 
 	<body ng-app="recipeApp" ng-controller="RecipeController as RecipeCtrl">
 
-		<h2></h2>
+		<h1>Recipe of the week</h1>
+		<h2>{{RecipeCtrl.recipe.name}}</h2>
+
+		<p>Preparation Time : {{RecipeCtrl.recipe.prepTime}}</br>
+			Cooking Time: {{Recipe.recipe.cookTime}}
+		</p>
+
+		<div ng-repeat="ingredient in ingredients">{{ingredient}}
+			<p ng-repeat="i in ingredient">{{i}}<br>
+			<p ng-show="recipeCtrl.isGlutenFree = false"></p>
+		</div>
+		
 
 
 	</body>

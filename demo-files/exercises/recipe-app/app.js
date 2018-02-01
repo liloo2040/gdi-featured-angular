@@ -6,7 +6,7 @@ angular
     });
 var recipe = {
     name: 'Cookies',
-    ingredients: ['flour', 'eggs', 'chocolate','butter'],
+    ingredients: ['flour','eggs','chocolate','butter'],
     prepTime: '1 hour',
     cookTime: '30 min',
     isVegan: true,
