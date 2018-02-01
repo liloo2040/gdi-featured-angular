@@ -5,13 +5,13 @@ angular
         this.recipe = recipe;
     });
 var recipe = {
-    name:,
+    name: 'Cookies',
     ingredients: ['flour', 'eggs', 'chocolate','butter'],
-    prepTime:,
-    cookTime:,
-    isVegan:,
-    isGlutenFree:,
-    isPaleo:
+    prepTime: '1 hour',
+    cookTime: '30 min',
+    isVegan: true,
+    isGlutenFree: false,
+    isPaleo: true
 };
 
 })();
